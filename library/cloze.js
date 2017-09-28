@@ -1,12 +1,16 @@
-function clozeCard(something, something){
+function ClozeCard(partial, cloze){
     
-        //functions for logic
+    this.partial = partial;
+    this.cloze = cloze;
+    this.fullText = "";
+    this.presentFullText = function() {
+
+        var full = partial.replace("...", " " + cloze + " ");
+        console.log("Full: " + full);
+        this.fullText += full;
+        console.log("this.fullText: " + this.fullText);
     
-        //more functions for logic
-    
-        //probably a constructor
-    
-    
-    }
-    
-    module.exports = clozeCard;
+    };    
+};
+
+    module.exports = ClozeCard;
