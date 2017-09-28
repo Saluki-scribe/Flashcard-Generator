@@ -12,6 +12,7 @@ var score = 0;
 var questions = [];
 
 var test = new clozeCard (cardInfo[count].partial, cardInfo[count].cloze);
+console.log(test.fullText);
 
 round();
 console.log(questions);
@@ -25,8 +26,11 @@ function startGame(){
 }
 
 function endGame(){
-    if (response.answer == "Q" || response.answer == "quit") {
-        console.log("Quitting");
+    
+    switch(response.argv[2]) {
+        case 'q':
+        case 'quit':
+            console.log("Quitting. Have a good day!");  
     }
 }
 
