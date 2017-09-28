@@ -1,8 +1,11 @@
-function basicCard(something, something){
-    
-        //condidtional code, hint probably gonna need a constructor
-    
-    }
-    
+//Constructor for creating basic cards
+
+function basicCard(front, back) {
+    this.front = front;
+    this.back = back;
+};
+  
+//Export basicCard constructor
+
     module.exports = basicCard;
     
