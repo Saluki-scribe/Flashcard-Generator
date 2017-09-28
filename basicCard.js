@@ -6,24 +6,27 @@ var inquirer = require('inquirer');
 var fs = require('fs');
 
 var count = 0;
+var score = 0;
 
-//var question1 = new basicCard(cardInfo[0].front, cardInfo[0].back);
+//Array that holds all questions and answers held in basic.json
 
 var questions = [];
 
-//console.log(firstPresident.front);
-//console.log(firstPresident.back);
+round();
+console.log(questions);
+startGame();
 
 
-
-//startgame();
+//startGame();
 
 function startGame(){
     prompts();
 }
 
 function endGame(){
-    //codes
+    if (response.answer == "Q" || response.answer == "quit") {
+        console.log("Quitting");
+    }
 }
 
 //Populate Questions Array with All questions and answers in basic.json
@@ -38,6 +41,8 @@ function round(){
     }
 }
 
+//Asks all available questions in basic.json
+
 function prompts(){
     
 if (count < cardInfo.length) {
@@ -51,49 +56,24 @@ if (count < cardInfo.length) {
             name: "answer"
         }
     ]).then(function(response) {
-        console.log("Answer: " + response.answer);
-        console.log("Questions[count].back: " + questions[count].back);
+        //console.log("Answer: " + response.answer);
+        //console.log("Questions[count].back: " + questions[count].back);
+
         if(response.answer == questions[count].back) {
                 count += 1;
-                console.log("You're right!");
+                score += 1;
+                console.log("\nYou're right!\n");
             } else {
                 count += 1;
-                console.log("You're wrong.");
+                console.log("\nYou're wrong.\n");
             }
-        
+    //Calls next question
         prompts();
             
         });
 } else {
-    console.log("Those are all of the questions!");
-}
+    console.log(`Those are all of the questions. You got ${score} out of ${count} questions right!`);
+    count = 0;
+    }
    
-/*,
-    {
-        type: "input",
-        message: questions[1].front,
-        name: "answer1"
-    },
-    {
-        type: "input",
-        message: questions[2].front,
-        name: "answer2"
-    },
-    {
-        type: "input",
-        message: questions[3].front,
-        name: "answer3"
-    },
-    {
-        type: "input",
-        message: questions[4].front,
-        name: "answer4"
-    },
-    ]);
-*/
-};
-
-
-round();
-console.log(questions);
-prompts();
+}; //End prompts function
