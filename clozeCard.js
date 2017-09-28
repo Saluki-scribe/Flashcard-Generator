@@ -69,10 +69,14 @@ if (count < cardInfo.length) {
         if(response.answer == questions[count].cloze) {
                 count += 1;
                 score += 1;
-                console.log("\nYou're right!\n");
+                console.log(`
+                You're right!
+                ${questions[count - 1].fullText}`);
             } else {
                 count += 1;
-                console.log("\nYou're wrong.\n");
+                console.log(`
+                You're wrong.
+                ${questions[count - 1].fullText}`);
             }
     //Calls next question
         prompts();
