@@ -14,9 +14,10 @@ var questions = [];
 var test = new clozeCard (cardInfo[count].partial, cardInfo[count].cloze);
 console.log(test.fullText);
 
+
+//Populate all cloze.json questions and answers into the questions array
 round();
 console.log(questions);
-//startGame();
 
 
 startGame();
@@ -44,7 +45,8 @@ function round(){
         var question = new clozeCard(first, second);
         questions.push(question);
     }
-}
+};
+
 
 //Asks all available questions in basic.json
 
@@ -79,6 +81,6 @@ if (count < cardInfo.length) {
 } else {
     console.log(`Those are all of the questions. You got ${score} out of ${count} questions right!`);
     count = 0;
-    }
+    };
    
 }; //End prompts function

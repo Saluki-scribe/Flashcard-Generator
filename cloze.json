@@ -2,5 +2,9 @@
     {
         "partial": "this is a...",
         "cloze": "question"
+    },
+    {
+        "partial": "I love...",
+        "cloze": "candy"
     }
 ]
