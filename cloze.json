@@ -1,10 +1,22 @@
 [
     {
-        "partial": "this is a...",
-        "cloze": "question"
+        "partial": "I used to be an adventurer like you, then I took an...in the knee.",
+        "cloze": "arrow"
     },
     {
-        "partial": "I love...",
-        "cloze": "candy"
+        "partial": "Luke, I am your...",
+        "cloze": "father"
+    },
+    {
+        "partial": "You're a...,Harry.",
+        "cloze": "Harry Potter"
+    },
+    {
+        "partial": "We all...down here.",
+        "cloze": "float"
+    },
+    {
+        "partial": "Prepare for trouble, and make it...",
+        "cloze": "double"
     }
 ]
